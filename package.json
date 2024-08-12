@@ -16,7 +16,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "ci:build": "cp README.md packages/react-sketch-canvas/ && pnpm --filter react-sketch-canvas ci:build",
     "release": "pnpm test && pnpm ci:build && changeset version && changeset publish",
-    "pre-release": "pnpm ci:test && pnpm ci:build && changeset && changeset publish"
+    "pre-release": "pnpm ci:test && pnpm ci:build && changeset && changeset publish",
+    "start": "server.mjs"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

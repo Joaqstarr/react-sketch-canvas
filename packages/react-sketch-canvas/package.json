@@ -1,5 +1,5 @@
 {
-  "name": "react-sketch-canvas",
+  "name": "@joaqstarr/react-sketch-canvas",
   "version": "7.0.0-next.4",
   "description": "react-sketch-canvas - Freehand vector drawing tool for React using SVG as canvas",
   "author": "Vinoth Pandian, Joaquin Royer",
@@ -42,7 +42,8 @@
     "ci:build": "pnpm clean && tsup src/index.tsx --env.NODE_ENV production && npm run size",
     "dev": "tsup src/index.tsx --env.NODE_ENV development",
     "lint": "eslint *.ts*",
-    "size": "size-limit"
+    "size": "size-limit",
+    "start": "node server.mjs"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^11.0.2",
