@@ -1,6 +1,6 @@
 {
   "name": "@joaqstarr/react-sketch-canvas",
-  "version": "7.0.5-next.4",
+  "version": "7.0.6-next.4",
   "description": "react-sketch-canvas - Freehand vector drawing tool for React using SVG as canvas",
   "author": "Vinoth Pandian, Joaquin Royer",
   "homepage": "https://github.com/Joaqstarr/react-sketch-canvas",

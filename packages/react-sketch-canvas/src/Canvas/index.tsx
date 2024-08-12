@@ -101,7 +101,6 @@ export const Canvas = React.forwardRef<CanvasRef, CanvasProps>((props, ref) => {
       const xOut = (xPos/boundingArea.width) * 200;
       const yPos = pointerEvent.pageY - boundingArea.top - scrollTop
       const yOut = (yPos/boundingArea.height) * 200;
-      console.log("Mouse Pos: " + xPos + ", "+ yPos +"\n +adjusted: " + + xOut + ", "+ yOut);
       return {
         x: xOut,
         y: yOut,
