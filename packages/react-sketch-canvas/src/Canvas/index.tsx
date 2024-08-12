@@ -68,7 +68,7 @@ export const Canvas = React.forwardRef<CanvasRef, CanvasProps>((props, ref) => {
       borderRadius: "0.25rem",
     },
     svgStyle = {},
-    withViewBox = false,
+    //withViewBox = true,
     readOnly = false,
   } = props;
 
@@ -85,6 +85,8 @@ export const Canvas = React.forwardRef<CanvasRef, CanvasProps>((props, ref) => {
         ? {
             width: boundingArea.width,
             height: boundingArea.height,
+            //width: 200,
+           // height: 200,
           }
         : null;
 
@@ -95,9 +97,14 @@ export const Canvas = React.forwardRef<CanvasRef, CanvasProps>((props, ref) => {
         return { x: 0, y: 0 };
       }
 
+      const xPos = pointerEvent.pageX - boundingArea.left - scrollLeft;
+      const xOut = (xPos/boundingArea.width) * 200;
+      const yPos = pointerEvent.pageY - boundingArea.top - scrollTop
+      const yOut = (yPos/boundingArea.height) * 200;
+      console.log("Mouse Pos: " + xPos + ", "+ yPos +"\n +adjusted: " + + xOut + ", "+ yOut);
       return {
-        x: pointerEvent.pageX - boundingArea.left - scrollLeft,
-        y: pointerEvent.pageY - boundingArea.top - scrollTop,
+        x: xOut,
+        y: yOut,
       };
     },
     [],
@@ -324,14 +331,15 @@ release drawing even when point goes out of canvas */
           ...svgStyle,
         }}
         id={id}
-        viewBox={
+     /*   viewBox={
           // eslint-disable-next-line no-nested-ternary
           withViewBox
             ? canvasSizeRef.current === null
               ? undefined
               : `0 0 ${canvasSizeRef.current.width} ${canvasSizeRef.current.height}`
             : undefined
-        }
+        */
+        viewBox= "0 0 200 200"
       >
         <g id={`${id}__eraser-stroke-group`} display="none">
           <rect
