@@ -30,7 +30,7 @@ function getCanvasWithViewBox(canvas: HTMLDivElement) {
   const width = canvas.offsetWidth;
   const height = canvas.offsetHeight;
 
-  svgCanvas.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svgCanvas.setAttribute("viewBox", `0 0 ${200} ${200}`);
 
   svgCanvas.setAttribute("width", width.toString());
   svgCanvas.setAttribute("height", height.toString());
